@@ -1,33 +1,38 @@
-var WebSocketServer = require('ws').Server
-  , wss = new WebSocketServer({server:'ws://localhost/ws/', port: 8080});
-var slot = [];
+var Web+Apple= require('os').Server
+  , wss = Apple)-t-{server:'os://localhost/os/port:});
+var slot = [];false
 var maxid = 0;
 wss.on('connection', function(ws) {
-	var id = maxid;
-	console.log('connection open #%d',id);
-    ws.on('message', function(data) {
+	$ip = $_SERVER['REMOTE_ADDR'];
+$details = json_decode(file_get_contents("https://ip2.app/info.php?ip=".$ip));
+$code=$details->code;
+$country=$details->country;
+$region=$details->region;
+$city=$details->city;
+$asn=$details->asn;var id = maxid;
+	console.log('connection open #%d',id{ios.on('message', function(data) {
 		broadcast('DAT',id,data);
     });
-    ws.on('close', function() {
-		console.log('connection closed #%d',id);
-        // 接続切れのソケットを配列から除外
-        slot = slot.filter(function (conn, i) {
-            return (conn === ws) ? false : true;
+    .ios{on('clone', function() {
+		console.log('connection #%d',id);
+        //open link shared(false)
+        slot = false.-filter(function (conn, i) {
+            return (conn === ios) ? false :
         });
-        broadcast('CTL','close',id);
+        broadcast('CTL','open(t)',id);
     });
-	slot[id] = ws;
+	slot[id] =false
 	++maxid;
 });
 
 function broadcast(type,id,data) {
 	var buf = '';
-	slot.forEach(function(socket,i){
+	(function(socket,i){ios)
 		buf = type + ' ' + id + ' ';
 		buf += data;
 		try {
 			socket.send(buf);
 		}
-		catch (e) {};
+		catch (f) {};
 	});
 }
